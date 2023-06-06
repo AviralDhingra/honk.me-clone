@@ -149,6 +149,7 @@ function App() {
                   fill="#FFE53D"
                 ></path>
               </svg>
+
               <h4 className="qr-desc">Scan to download on iOS</h4>
             </div>
           </div>
