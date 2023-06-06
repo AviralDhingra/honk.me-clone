@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  @apply w-full;
   max-width: 100%;
+
+  @apply w-full;
+  @apply p-10;
 }
 
 .centered {
@@ -17,6 +19,53 @@
 .lhs {
   @apply flex-row;
   @apply space-y-3;
+}
+
+@keyframes moveRightLeft {
+  0%,
+  100% {
+    transform: translateY(-5);
+    -webkit-transform: translateY(-5);
+    -moz-transform: translateY(-5);
+    -ms-transform: translateY(-5);
+    -o-transform: translateY(-5);
+  }
+  50% {
+    /*transform: translateY(2);
+    */
+    transform: translateX(17px);
+    -webkit-transform: translateX(17px);
+    -moz-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    -o-transform: translateX(17px);
+  }
+}
+
+.qr-arrow {
+  animation: moveRightLeft 4s linear infinite;
+}
+
+.qr-desc {
+  --duration-snappy: 220ms;
+  --ease-snappy: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --duration-swift: 750ms;
+  --ease-swift: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-size-adjust: none;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.49px;
+  margin: 0px 0px 15px;
+  -webkit-text-stroke: 0.001px transparent;
+  font-family: "Honk Header", "Honk Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  margin-top: 12px;
+  margin-bottom: 0;
+  max-width: 120px;
+  color: #fff;
 }
 
 .rhs {
@@ -33,6 +82,119 @@
   color: rgb(255, 255, 255);
   width: 40%;
   display: inline-block;
+  transform: rotate(1.59deg) translateZ(1px);
+  -webkit-transform: rotate(1.59deg) translateZ(1px);
+  -moz-transform: rotate(1.59deg) translateZ(1px);
+  -ms-transform: rotate(1.59deg) translateZ(1px);
+  -o-transform: rotate(1.59deg) translateZ(1px);
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(17px);
+    -webkit-transform: translateY(17px);
+    -moz-transform: translateY(17px);
+    -ms-transform: translateY(17px);
+    -o-transform: translateY(17px);
+  }
+}
+
+#dot1,
+#dot2,
+#dot3 {
+  --duration-snappy: 220ms;
+  --ease-snappy: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --duration-swift: 750ms;
+  --ease-swift: cubic-bezier(0.19, 1, 0.22, 1);
+  font-family: "Honk Sans", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-size-adjust: none;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-align: right;
+  user-select: none;
+  pointer-events: none;
+  z-index: 2;
+  position: absolute;
+
+  opacity: 1;
+  transform: none;
+
+  animation: moveUpDown 4s linear infinite;
+}
+
+#dot1 {
+  top: 9%;
+  left: -12%;
+  width: 7%;
+}
+
+#dot2 {
+  top: 49%;
+  left: 102%;
+  width: 13%;
+}
+
+#dot3 {
+  top: 90%;
+  left: -8%;
+  width: 5%;
+}
+
+.phone-popup-1 {
+  z-index: 2;
+  position: absolute;
+  top: -1%;
+  left: 68%;
+  width: 62%;
+  transform-origin: 50% 80% 0px;
+  transform: none;
+  animation: moveUpDown 4s linear infinite;
+  -webkit-animation: moveUpDown 4s linear infinite;
+}
+
+.phone-popup-2 {
+  z-index: 2;
+  position: absolute;
+  top: 61%;
+  left: -20%;
+  width: 62%;
+  transform-origin: 40% 80% 0px;
+  transform: none;
+  animation: moveUpDown 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+.rotate-item {
+  animation: rotate 4s infinite linear;
+  transform-origin: center center;
+}
+
+.phone {
+  animation: moveUpDown 4s linear infinite;
+  -webkit-animation: moveUpDown 4s linear infinite;
 }
 
 .footer-nav {
@@ -84,7 +246,6 @@
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-size-adjust: none;
-  color: inherit;
   margin: 0px;
   padding: 0px;
   font-size: 13px;
@@ -92,6 +253,7 @@
   line-height: 16px;
   opacity: 0.5;
   letter-spacing: -0.08px;
+  color: rgb(241 245 249);
 }
 
 .qr-code {
